@@ -1,0 +1,39 @@
+/* Základní styl */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/922/313/191/abstract-abstraction-biology-chemistry-wallpaper-preview.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  color: #333;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #ddd;

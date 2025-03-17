@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organická Chemie</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/922/313/191/abstract-abstraction-biology-chemistry-wallpaper-preview.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        color: #333;
+      }
+
+      header {
+        background-color: rgba(0, 123, 255, 0.9);
+        color: white;
+        text-align: center;
+        padding: 30px;
+        font-size: 32px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #root {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #f1f1f1;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #0056b3;
+      }
+
+      p {
+        line-height: 1.6;
+      }
+
+      .compound {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+      }
+
+      .compound img {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+      }
+
+      .compound:last-child {
+        border-bottom: none;
+      }
+
+      .compound h3 {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .compound-icons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .compound-icons img {
+        width: 25px;
+        height: 25px;
+      }
+
+      .search-bar {
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Organická Chemie</header>
+    <div id="root">
+      <input
+        class="search-bar"
+        type="text"
+        id="searchInput"
+        placeholder="Hledat sloučeniny..."
+      />
+      <ul id="contentList"></ul>
+    </div>
+    <footer>CHFA</footer>
+
+    <script>
+      const compounds = [
+        "Alkany",
+        "Alkeny",
+        "Cyklolkany",
+        "Alkyny",
+        "Cyklolkyny",
+        "Aldehydy",
+        "Ketony",
+        "Estery",
+        "Aminy",
+      ];
+      const contentList = document.getElementById("contentList");
+      const searchInput = document.getElementById("searchInput");
+
+      function renderList(items) {
+        contentList.innerHTML = items.map((item) => <li>${item}</li>).join("");
+      }
+
+      searchInput.addEventListener("input", function () {
+        const filter = this.value.toLowerCase();
+        const filteredCompounds = compounds.filter((compound) =>
+          compound.toLowerCase().includes(filter)
+        );
+        renderList(filteredCompounds);
+      });
+
+      renderList(compounds);
+    </script>
+  </body>
+</html>
